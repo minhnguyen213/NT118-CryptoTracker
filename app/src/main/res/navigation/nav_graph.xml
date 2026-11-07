@@ -9,4 +9,9 @@
     <fragment android:id="@+id/marketFragment" android:name="com.example.cryptotracker.MarketFragment" android:label="Market" tools:layout="@layout/fragment_market" />
     <fragment android:id="@+id/chartFragment" android:name="com.example.cryptotracker.ChartFragment" android:label="Chart" tools:layout="@layout/fragment_chart" />
     <fragment android:id="@+id/profileFragment" android:name="com.example.cryptotracker.ProfileFragment" android:label="Profile" tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.cryptotracker.DetailFragment"
+        android:label="Detail"
+        tools:layout="@layout/fragment_detail" />
 </navigation>
