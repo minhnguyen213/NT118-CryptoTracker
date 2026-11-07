@@ -2,6 +2,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/homeFragment" android:title="Home" android:icon="@drawable/ic_home"/>
     <item android:id="@+id/marketFragment" android:title="Market" android:icon="@drawable/ic_market"/>
-    <item android:id="@+id/chartFragment" android:title="Chart" android:icon="@drawable/ic_chart"/>
+    <item android:id="@+id/convertFragment" android:icon="@drawable/ic_convert" android:title="Convert" />
     <item android:id="@+id/profileFragment" android:title="Profile" android:icon="@drawable/ic_profile"/>
 </menu>
