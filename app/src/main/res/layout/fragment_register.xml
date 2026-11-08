@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <ImageView
+        android:id="@+id/btnBackRegister"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginBottom="24dp"
+        android:padding="4dp"
+        android:src="@android:drawable/ic_menu_revert" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="Tạo tài khoản"
+        android:textColor="#1E1E1E"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:text="Tham gia CryptoTracker"
+        android:textColor="#757575"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/etRegEmail"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_marginBottom="16dp"
+        android:background="#FFFFFF"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:paddingHorizontal="16dp" />
+
+    <EditText
+        android:id="@+id/etRegPassword"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_marginBottom="16dp"
+        android:background="#FFFFFF"
+        android:hint="Mật khẩu (Ít nhất 6 ký tự)"
+        android:inputType="textPassword"
+        android:paddingHorizontal="16dp" />
+
+    <EditText
+        android:id="@+id/etRegConfirmPassword"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_marginBottom="32dp"
+        android:background="#FFFFFF"
+        android:hint="Xác nhận lại mật khẩu"
+        android:inputType="textPassword"
+        android:paddingHorizontal="16dp" />
+
+    <Button
+        android:id="@+id/btnDoRegister"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:backgroundTint="#2196F3"
+        android:text="Đăng ký ngay"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+</LinearLayout>

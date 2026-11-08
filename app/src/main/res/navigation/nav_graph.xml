@@ -14,4 +14,9 @@
         android:name="com.example.cryptotracker.DetailFragment"
         android:label="Detail"
         tools:layout="@layout/fragment_detail" />
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.cryptotracker.RegisterFragment"
+        android:label="Register"
+        tools:layout="@layout/fragment_register" />
 </navigation>
