@@ -15,6 +15,11 @@ public class CryptoCoin {
 
     @SerializedName("image")
     private String imageUrl;
+    @SerializedName("total_volume")
+    private double totalVolume;
+
+    public double getTotalVolume() { return totalVolume; }
+    public void setTotalVolume(double totalVolume) { this.totalVolume = totalVolume; }
 
     public CryptoCoin(String id, String symbol, String name, double currentPrice, double priceChangePercentage24h, String imageUrl) {
         this.id = id;

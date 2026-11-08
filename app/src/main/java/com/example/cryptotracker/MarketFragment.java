@@ -72,32 +72,20 @@ public class MarketFragment extends Fragment {
     }
 
     private void fetchInitialDataFromCoinGecko() {
-        swipeRefreshLayout.setRefreshing(true);
-        ApiService apiService = RetrofitClient.getClient().create(ApiService.class);
-        Call<List<CryptoCoin>> call = apiService.getCoins("usd", "market_cap_desc", 100, 1, false);
+        SharedViewModel viewModel = new androidx.lifecycle.ViewModelProvider(requireActivity()).get(SharedViewModel.class);
 
-        call.enqueue(new Callback<List<CryptoCoin>>() {
-            @Override
-            public void onResponse(Call<List<CryptoCoin>> call, Response<List<CryptoCoin>> response) {
+        viewModel.getCoinList().observe(getViewLifecycleOwner(), allCoins -> {
+            if (allCoins != null && !allCoins.isEmpty()) {
                 swipeRefreshLayout.setRefreshing(false);
-                if (response.isSuccessful() && response.body() != null) {
-                    fullCoinList = response.body();
-                    adapter.updateData(fullCoinList);
+                fullCoinList = allCoins;
+                adapter.updateData(fullCoinList);
 
+                if (binanceWebSocket == null) {
                     startBinanceWebSocket();
-                } else if (response.code() == 429) {
-                    Toast.makeText(getContext(), "CoinGecko bị kẹt Limit, xin chờ 1 lát.", Toast.LENGTH_SHORT).show();
                 }
-            }
-
-            @Override
-            public void onFailure(Call<List<CryptoCoin>> call, Throwable t) {
-                swipeRefreshLayout.setRefreshing(false);
-                Toast.makeText(getContext(), "Mất kết nối mạng!", Toast.LENGTH_SHORT).show();
             }
         });
     }
-
     private void startBinanceWebSocket() {
         client = new OkHttpClient();
         Request request = new Request.Builder().url("wss://stream.binance.com:9443/ws/!miniTicker@arr").build();
