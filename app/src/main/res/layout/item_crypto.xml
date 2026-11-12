@@ -4,18 +4,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingStart="16dp"
-    android:paddingEnd="16dp"
-    android:paddingTop="13dp"
-    android:paddingBottom="13dp"
-    android:background="?attr/selectableItemBackground">
+    android:layout_marginBottom="8dp"
+    android:padding="14dp"
+    android:background="@drawable/bg_coin_logo">
 
     <ImageView
         android:id="@+id/ivCoinLogo"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:contentDescription="Coin logo"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
         android:scaleType="fitCenter"
+        android:padding="6dp"
         android:src="@drawable/ic_market"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -27,12 +25,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:layout_marginEnd="8dp"
-        android:ellipsize="end"
-        android:maxLines="1"
         android:text="Bitcoin"
         android:textColor="@color/text_primary"
-        android:textSize="14sp"
+        android:textSize="15sp"
         android:textStyle="bold"
+        android:maxLines="1"
+        android:ellipsize="end"
         app:layout_constraintStart_toEndOf="@id/ivCoinLogo"
         app:layout_constraintEnd_toStartOf="@id/tvCoinPrice"
         app:layout_constraintTop_toTopOf="@id/ivCoinLogo" />
@@ -45,6 +43,7 @@
         android:text="BTC"
         android:textColor="@color/text_secondary"
         android:textSize="12sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@id/tvCoinName"
         app:layout_constraintTop_toBottomOf="@id/tvCoinName" />
 
@@ -70,13 +69,5 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvCoinPrice" />
-
-    <View
-        android:layout_width="0dp"
-        android:layout_height="1dp"
-        android:background="@color/divider_color"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

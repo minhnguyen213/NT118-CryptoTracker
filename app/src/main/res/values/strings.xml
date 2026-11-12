@@ -1,5 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string name="app_name">NT118-CryptoTracker</string>
-    <!-- TODO: Remove or change this placeholder text -->
+
+    <!-- Placeholder -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Home -->
+    <string name="home_fear_greed">Fear &amp; Greed Index</string>
+    <string name="home_market_sentiment">Market sentiment</string>
+    <string name="home_loading">Đang tải...</string>
+
+    <!-- Global Market -->
+    <string name="home_market_cap">Market Cap</string>
+    <string name="home_volume_24h">Volume (24h)</string>
+    <string name="home_global_market">Global market</string>
+    <string name="home_trading_volume">Trading volume</string>
+
+    <!-- Altcoin Season -->
+    <string name="home_altcoin_index">Altcoin Season Index</string>
+    <string name="home_bitcoin_season">Bitcoin Season</string>
+    <string name="home_altcoin_season">Altcoin Season</string>
+
+    <!-- Top Coins -->
+    <string name="home_top_gainers">Top Gainers</string>
+    <string name="home_top_gainers_desc">Cryptocurrencies with the highest gains</string>
+    <string name="home_top_losers">Top Losers</string>
+    <string name="home_top_losers_desc">Cryptocurrencies with the highest losses</string>
+
+    <!-- Market -->
+    <string name="market_title">Market</string>
+    <string name="market_subtitle">Explore cryptocurrency prices and market trends</string>
+    <string name="market_search_hint">Search coin name or symbol...</string>
+    <string name="market_search_icon">Search</string>
+
 </resources>
