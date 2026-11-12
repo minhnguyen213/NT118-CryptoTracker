@@ -1,61 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F4F7F9"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/bg_primary">
 
+    <!-- HOME TABS -->
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayoutHome"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#FFFFFF"
-        app:tabIndicatorColor="#2196F3"
+        android:layout_height="52dp"
+        android:background="@color/bg_secondary"
+        android:elevation="2dp"
+        app:tabIndicatorColor="@color/accent_cyan"
+        app:tabIndicatorHeight="3dp"
         app:tabMode="scrollable"
-        app:tabSelectedTextColor="#2196F3"
-        app:tabTextColor="#757575" />
+        app:tabGravity="start"
+        app:tabRippleColor="@android:color/transparent"
+        app:tabSelectedTextColor="@color/accent_cyan"
+        app:tabTextColor="@color/text_secondary" />
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="true">
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true"
+        android:clipToPadding="false"
+        android:scrollbars="none">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="18dp"
+            android:paddingBottom="24dp">
 
-            <!-- KHU VỰC CHỈ SỐ VĨ MÔ MỚI -->
+            <!-- PAGE TITLE -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Market Overview"
+                android:textColor="@color/text_primary"
+                android:textSize="22sp"
+                android:textStyle="bold" />
 
-            <!-- Card 1: Fear & Greed Index (Biểu đồ vòng cung) -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Tổng quan thị trường tiền điện tử"
+                android:textColor="@color/text_secondary"
+                android:textSize="12sp" />
+
+            <!-- FEAR AND GREED CARD -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardBackgroundColor="#FFFFFF"
+                android:layout_marginTop="18dp"
+                app:cardBackgroundColor="@color/bg_card"
                 app:cardCornerRadius="16dp"
-                app:cardElevation="2dp">
+                app:cardElevation="0dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
                     android:orientation="vertical"
-                    android:padding="16dp">
+                    android:padding="18dp">
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Fear &amp; Greed Index"
-                        android:textColor="#1E1E1E"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
 
-                    <!-- Nhúng Custom View vừa tạo -->
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Fear &amp; Greed Index"
+                            android:textColor="@color/text_primary"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="MARKET SENTIMENT"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="9sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
                     <RelativeLayout
-                        android:layout_width="160dp"
-                        android:layout_height="80dp"
+                        android:layout_width="200dp"
+                        android:layout_height="112dp"
+                        android:layout_gravity="center_horizontal"
                         android:layout_marginTop="16dp">
 
                         <com.example.cryptotracker.FearGreedGaugeView
@@ -75,8 +118,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="--"
-                                android:textColor="#1E1E1E"
-                                android:textSize="26sp"
+                                android:textColor="@color/text_primary"
+                                android:textSize="30sp"
                                 android:textStyle="bold" />
 
                             <TextView
@@ -84,135 +127,172 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Đang tải..."
-                                android:textColor="#757575"
+                                android:textColor="@color/text_secondary"
                                 android:textSize="12sp" />
                         </LinearLayout>
                     </RelativeLayout>
+
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- Card 2: Market Cap & Volume của toàn thị trường -->
-            <androidx.cardview.widget.CardView
+            <!-- GLOBAL MARKET DATA -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:text="Global Market"
+                android:textColor="@color/text_primary"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                app:cardBackgroundColor="#FFFFFF"
-                app:cardCornerRadius="16dp"
-                app:cardElevation="2dp">
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:baselineAligned="false">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:baselineAligned="false"
-                    android:orientation="horizontal"
-                    android:padding="16dp">
+                <!-- MARKET CAP -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="104dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="6dp"
+                    app:cardBackgroundColor="@color/bg_card"
+                    app:cardCornerRadius="14dp"
+                    app:cardElevation="0dp">
 
                     <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical"
+                        android:padding="14dp">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Market Cap"
-                            android:textColor="#757575"
+                            android:textColor="@color/text_secondary"
                             android:textSize="12sp" />
 
                         <TextView
                             android:id="@+id/tvGlobalMarketCap"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp"
+                            android:layout_marginTop="9dp"
                             android:text="$--"
-                            android:textColor="#1E1E1E"
+                            android:textColor="@color/text_primary"
                             android:textSize="18sp"
-                            android:textStyle="bold" />
-                    </LinearLayout>
+                            android:textStyle="bold"
+                            android:maxLines="1"
+                            android:ellipsize="end" />
 
-                    <View
-                        android:layout_width="1dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginHorizontal="12dp"
-                        android:background="#E0E0E0" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- VOLUME -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="104dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="6dp"
+                    app:cardBackgroundColor="@color/bg_card"
+                    app:cardCornerRadius="14dp"
+                    app:cardElevation="0dp">
 
                     <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical"
+                        android:padding="14dp">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Volume (24h)"
-                            android:textColor="#757575"
+                            android:textColor="@color/text_secondary"
                             android:textSize="12sp" />
 
                         <TextView
                             android:id="@+id/tvGlobalVolume"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp"
+                            android:layout_marginTop="9dp"
                             android:text="$--"
-                            android:textColor="#1E1E1E"
+                            android:textColor="@color/text_primary"
                             android:textSize="18sp"
-                            android:textStyle="bold" />
-                    </LinearLayout>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
+                            android:textStyle="bold"
+                            android:maxLines="1"
+                            android:ellipsize="end" />
 
-            <!-- Card 3: Altcoin Season Index -->
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+            <!-- ALTCOIN SEASON -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                app:cardBackgroundColor="#FFFFFF"
+                android:layout_marginTop="14dp"
+                app:cardBackgroundColor="@color/bg_card"
                 app:cardCornerRadius="16dp"
-                app:cardElevation="2dp">
+                app:cardElevation="0dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:padding="16dp">
+                    android:padding="18dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
                         android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Altcoin Season Index"
+                            android:textColor="@color/text_primary"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Altcoin Season Index"
-                            android:textColor="#1E1E1E"
-                            android:textSize="16sp"
+                            android:text="DEMO"
+                            android:textColor="@color/accent_cyan"
+                            android:textSize="10sp"
                             android:textStyle="bold" />
+
                     </LinearLayout>
 
                     <TextView
                         android:id="@+id/tvAltcoinIndex"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginTop="14dp"
                         android:text="39 / 100"
-                        android:textColor="#1E1E1E"
-                        android:textSize="22sp"
+                        android:textColor="@color/text_primary"
+                        android:textSize="26sp"
                         android:textStyle="bold" />
 
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp">
+                        android:layout_marginTop="14dp">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentStart="true"
                             android:text="Bitcoin Season"
-                            android:textColor="#757575"
+                            android:textColor="@color/text_secondary"
                             android:textSize="11sp" />
 
                         <TextView
@@ -220,59 +300,86 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
                             android:text="Altcoin Season"
-                            android:textColor="#757575"
+                            android:textColor="@color/text_secondary"
                             android:textSize="11sp" />
+
                     </RelativeLayout>
 
-                    <!-- Thanh Progress Bar giả lập UI Altcoin Season -->
                     <ProgressBar
                         android:id="@+id/pbAltcoinSeason"
                         style="?android:attr/progressBarStyleHorizontal"
                         android:layout_width="match_parent"
                         android:layout_height="8dp"
-                        android:layout_marginTop="4dp"
+                        android:layout_marginTop="8dp"
                         android:max="100"
                         android:progress="39"
                         android:progressDrawable="@drawable/bg_altcoin_season" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Chỉ số minh họa, chưa phải dữ liệu thời gian thực."
+                        android:textColor="@color/text_hint"
+                        android:textSize="10sp" />
+
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- PHẦN TOP GAINERS & LOSERS GIỮ NGUYÊN -->
+            <!-- TOP GAINERS -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
-                android:text="📈 Top Token Tăng Giá"
-                android:textColor="#1E1E1E"
-                android:textSize="16sp"
+                android:text="Top Gainers"
+                android:textColor="@color/text_primary"
+                android:textSize="17sp"
                 android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="Các token tăng giá mạnh nhất"
+                android:textColor="@color/text_secondary"
+                android:textSize="11sp" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvGainers"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="12dp"
                 android:clipToPadding="false"
-                android:paddingEnd="16dp" />
+                android:paddingEnd="8dp" />
+
+            <!-- TOP LOSERS -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Top Losers"
+                android:textColor="@color/text_primary"
+                android:textSize="17sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="📉 Top Token Giảm Giá"
-                android:textColor="#1E1E1E"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                android:layout_marginTop="3dp"
+                android:text="Các token giảm giá mạnh nhất"
+                android:textColor="@color/text_secondary"
+                android:textSize="11sp" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvLosers"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="12dp"
                 android:clipToPadding="false"
-                android:paddingEnd="16dp"
-                android:paddingBottom="40dp" />
+                android:paddingEnd="8dp"
+                android:paddingBottom="24dp" />
 
         </LinearLayout>
     </ScrollView>
+
 </LinearLayout>
