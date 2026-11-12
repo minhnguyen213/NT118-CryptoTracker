@@ -1,73 +1,185 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F5F5"
-    android:orientation="vertical"
-    android:padding="24dp">
+    android:background="@color/bg_primary"
+    android:fillViewport="true"
+    android:clipToPadding="false">
 
-    <ImageView
-        android:id="@+id/btnBackRegister"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
-        android:layout_marginBottom="24dp"
-        android:padding="4dp"
-        android:src="@android:drawable/ic_menu_revert" />
-
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:text="Tạo tài khoản"
-        android:textColor="#1E1E1E"
-        android:textSize="28sp"
-        android:textStyle="bold" />
+        android:orientation="vertical"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:paddingTop="24dp"
+        android:paddingBottom="32dp">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:text="Tham gia CryptoTracker"
-        android:textColor="#757575"
-        android:textSize="14sp" />
+        <!-- Back Button -->
+        <FrameLayout
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/bg_back_button">
 
-    <EditText
-        android:id="@+id/etRegEmail"
-        android:layout_width="match_parent"
-        android:layout_height="52dp"
-        android:layout_marginBottom="16dp"
-        android:background="#FFFFFF"
-        android:hint="Email"
-        android:inputType="textEmailAddress"
-        android:paddingHorizontal="16dp" />
+            <ImageView
+                android:id="@+id/btnBackRegister"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="12dp"
+                android:src="@drawable/ic_arrow_back"
+                android:scaleType="centerInside"
+                android:contentDescription="Back" />
 
-    <EditText
-        android:id="@+id/etRegPassword"
-        android:layout_width="match_parent"
-        android:layout_height="52dp"
-        android:layout_marginBottom="16dp"
-        android:background="#FFFFFF"
-        android:hint="Mật khẩu (Ít nhất 6 ký tự)"
-        android:inputType="textPassword"
-        android:paddingHorizontal="16dp" />
+        </FrameLayout>
 
-    <EditText
-        android:id="@+id/etRegConfirmPassword"
-        android:layout_width="match_parent"
-        android:layout_height="52dp"
-        android:layout_marginBottom="32dp"
-        android:background="#FFFFFF"
-        android:hint="Xác nhận lại mật khẩu"
-        android:inputType="textPassword"
-        android:paddingHorizontal="16dp" />
+        <!-- Header -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Create Account"
+            android:textColor="@color/text_primary"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/inter_regular" />
 
-    <Button
-        android:id="@+id/btnDoRegister"
-        android:layout_width="match_parent"
-        android:layout_height="52dp"
-        android:backgroundTint="#2196F3"
-        android:text="Đăng ký ngay"
-        android:textColor="#FFFFFF"
-        android:textSize="16sp"
-        android:textStyle="bold" />
-</LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="28dp"
+            android:text="Join CryptoTracker and manage your crypto portfolio"
+            android:textColor="@color/text_secondary"
+            android:textSize="14sp"
+            android:lineSpacingExtra="3dp"
+            android:fontFamily="@font/inter_regular" />
+
+        <!-- Register Form Card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/bg_card"
+            app:cardCornerRadius="22dp"
+            app:cardElevation="3dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="22dp">
+
+                <!-- Email -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Email Address"
+                    android:textColor="@color/text_primary"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/inter_regular" />
+
+                <EditText
+                    android:id="@+id/etRegEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/bg_register_input"
+                    android:hint="Enter your email"
+                    android:textColor="@color/text_primary"
+                    android:textColorHint="@color/text_hint"
+                    android:textSize="14sp"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:singleLine="true"
+                    android:inputType="textEmailAddress"
+                    android:fontFamily="@font/inter_regular" />
+
+                <!-- Password -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Password"
+                    android:textColor="@color/text_primary"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/inter_regular" />
+
+                <EditText
+                    android:id="@+id/etRegPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/bg_register_input"
+                    android:hint="At least 6 characters"
+                    android:textColor="@color/text_primary"
+                    android:textColorHint="@color/text_hint"
+                    android:textSize="14sp"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:singleLine="true"
+                    android:inputType="textPassword"
+                    android:fontFamily="@font/inter_regular" />
+
+                <!-- Confirm Password -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Confirm Password"
+                    android:textColor="@color/text_primary"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/inter_regular" />
+
+                <EditText
+                    android:id="@+id/etRegConfirmPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="28dp"
+                    android:background="@drawable/bg_register_input"
+                    android:hint="Re-enter your password"
+                    android:textColor="@color/text_primary"
+                    android:textColorHint="@color/text_hint"
+                    android:textSize="14sp"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:singleLine="true"
+                    android:inputType="textPassword"
+                    android:fontFamily="@font/inter_regular" />
+
+                <!-- Register Button -->
+                <Button
+                    android:id="@+id/btnDoRegister"
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:backgroundTint="@color/primary_blue"
+                    android:text="Create Account"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    android:textAllCaps="false"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/inter_regular"
+                    app:cornerRadius="14dp" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Footer -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:gravity="center"
+            android:text="Your crypto journey starts here."
+            android:textColor="@color/text_hint"
+            android:textSize="12sp"
+            android:fontFamily="@font/inter_regular" />
+
+    </LinearLayout>
+
+</ScrollView>

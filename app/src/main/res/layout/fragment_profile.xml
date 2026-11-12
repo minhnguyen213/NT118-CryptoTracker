@@ -1,158 +1,290 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F5F5"
-    android:orientation="vertical">
+    android:background="@color/bg_primary"
+    android:fillViewport="true">
 
     <LinearLayout
-        android:id="@+id/layoutGuest"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="24dp"
-        android:visibility="visible">
+        android:padding="20dp">
 
-        <ImageView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:src="@drawable/ic_profile"
-            app:tint="#9E9E9E" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Đăng nhập vào CryptoTracker"
-            android:textColor="#1E1E1E"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Thêm token vào danh sách theo dõi riêng"
-            android:textColor="#757575"
-            android:textSize="14sp" />
-
-        <EditText
-            android:id="@+id/etEmail"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="32dp"
-            android:background="#FFFFFF"
-            android:hint="Email"
-            android:inputType="textEmailAddress"
-            android:paddingHorizontal="16dp" />
-
-        <EditText
-            android:id="@+id/etPassword"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="12dp"
-            android:background="#FFFFFF"
-            android:hint="Mật khẩu"
-            android:inputType="textPassword"
-            android:paddingHorizontal="16dp" />
-
-        <Button
-            android:id="@+id/btnLogin"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="24dp"
-            android:backgroundTint="#2196F3"
-            android:text="Đăng Nhập"
-            android:textColor="#FFFFFF"
-            android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/btnRegister"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="12dp"
-            android:backgroundTint="#E0E0E0"
-            android:text="Tạo tài khoản mới"
-            android:textColor="#1E1E1E" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/layoutLoggedIn"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:visibility="gone">
-
+        <!-- Guest Layout -->
         <LinearLayout
+            android:id="@+id/layoutGuest"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#FFFFFF"
-            android:gravity="center"
+            android:gravity="center_horizontal"
             android:orientation="vertical"
-            android:paddingTop="48dp"
-            android:paddingBottom="32dp">
+            android:paddingTop="36dp"
+            android:paddingBottom="32dp"
+            android:visibility="visible">
 
-            <ImageView
-                android:layout_width="90dp"
-                android:layout_height="90dp"
-                android:background="#E0E0E0"
-                android:padding="16dp"
-                android:src="@drawable/ic_profile" />
+            <androidx.cardview.widget.CardView
+                android:layout_width="88dp"
+                android:layout_height="88dp"
+                app:cardBackgroundColor="@color/primary_blue_light"
+                app:cardCornerRadius="44dp"
+                app:cardElevation="0dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="22dp"
+                    android:src="@drawable/ic_profile"
+                    android:contentDescription="Profile"
+                    app:tint="@color/primary_blue" />
+
+            </androidx.cardview.widget.CardView>
 
             <TextView
-                android:id="@+id/tvProfileName"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Người dùng"
-                android:textColor="#000000"
+                android:layout_marginTop="24dp"
+                android:gravity="center"
+                android:text="Welcome to CryptoTracker"
+                android:textColor="@color/text_primary"
                 android:textSize="22sp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tvProfileEmail"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="email@uit.edu.vn"
-                android:textColor="#757575"
-                android:textSize="16sp" />
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="Sign in to manage your account and track your favorite cryptocurrencies."
+                android:textColor="@color/text_secondary"
+                android:textSize="14sp"
+                android:lineSpacingExtra="3dp" />
+
+            <!-- Login Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                app:cardBackgroundColor="@color/bg_card"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Email"
+                        android:textColor="@color/text_primary"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/etEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/bg_coin_logo"
+                        android:hint="Enter your email"
+                        android:inputType="textEmailAddress"
+                        android:paddingHorizontal="14dp"
+                        android:textColor="@color/text_primary"
+                        android:textColorHint="@color/text_hint"
+                        android:textSize="14sp"
+                        android:maxLines="1" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="18dp"
+                        android:text="Password"
+                        android:textColor="@color/text_primary"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/etPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/bg_coin_logo"
+                        android:hint="Enter your password"
+                        android:inputType="textPassword"
+                        android:paddingHorizontal="14dp"
+                        android:textColor="@color/text_primary"
+                        android:textColorHint="@color/text_hint"
+                        android:textSize="14sp"
+                        android:maxLines="1" />
+
+                    <Button
+                        android:id="@+id/btnLogin"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:layout_marginTop="24dp"
+                        android:backgroundTint="@color/primary_blue"
+                        android:text="Sign In"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btnRegister"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:layout_marginTop="10dp"
+                        android:backgroundTint="@color/primary_blue_light"
+                        android:text="Create New Account"
+                        android:textAllCaps="false"
+                        android:textColor="@color/primary_blue"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
         </LinearLayout>
 
+        <!-- Logged In Layout -->
         <LinearLayout
+            android:id="@+id/layoutLoggedIn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="#FFFFFF"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:visibility="gone">
 
-            <TextView
-                android:id="@+id/btnWatchlist"
+            <!-- Profile Header -->
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="?attr/selectableItemBackground"
-                android:clickable="true"
-                android:padding="16dp"
-                android:text="⭐ Danh sách theo dõi (Watchlist)"
-                android:textColor="#000000"
-                android:textSize="16sp" />
+                app:cardBackgroundColor="@color/bg_card"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="2dp">
 
-            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#F5F5F5" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="28dp">
 
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="96dp"
+                        android:layout_height="96dp"
+                        app:cardBackgroundColor="@color/primary_blue_light"
+                        app:cardCornerRadius="48dp"
+                        app:cardElevation="0dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="24dp"
+                            android:src="@drawable/ic_profile"
+                            android:contentDescription="Profile"
+                            app:tint="@color/primary_blue" />
+
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:id="@+id/tvProfileName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="18dp"
+                        android:text="Người dùng"
+                        android:textColor="@color/text_primary"
+                        android:textSize="21sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvProfileEmail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="email@uit.edu.vn"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:background="@drawable/bg_trending_change"
+                        android:paddingHorizontal="14dp"
+                        android:paddingVertical="6dp"
+                        android:text="Verified Account"
+                        android:textColor="@color/positive_green"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Account Options -->
             <TextView
-                android:id="@+id/btnLogout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="?attr/selectableItemBackground"
-                android:clickable="true"
-                android:padding="16dp"
-                android:text="Đăng xuất"
-                android:textColor="#F44336"
-                android:textSize="16sp"
+                android:layout_marginTop="28dp"
+                android:layout_marginBottom="12dp"
+                android:text="Account Settings"
+                android:textColor="@color/text_primary"
+                android:textSize="18sp"
                 android:textStyle="bold" />
-        </LinearLayout>
-    </LinearLayout>
 
-</LinearLayout>
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/bg_card"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/btnWatchlist"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:background="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="18dp"
+                        android:text="★    My Watchlist"
+                        android:textColor="@color/text_primary"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginHorizontal="16dp"
+                        android:background="@color/divider_color" />
+
+                    <TextView
+                        android:id="@+id/btnLogout"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:background="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="18dp"
+                        android:text="↪    Sign Out"
+                        android:textColor="@color/negative_red"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

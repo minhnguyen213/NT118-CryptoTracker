@@ -1,5 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <!-- Base colors -->
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Main backgrounds -->
+    <color name="bg_primary">#F5F7FB</color>
+    <color name="bg_secondary">#FFFFFF</color>
+    <color name="bg_card">#FFFFFF</color>
+    <color name="bg_card_elevated">#FFFFFF</color>
+    <color name="bg_input">#F8FAFC</color>
+
+    <!-- Brand colors -->
+    <color name="primary_blue">#2563EB</color>
+    <color name="primary_blue_dark">#1D4ED8</color>
+    <color name="primary_blue_light">#EFF6FF</color>
+    <color name="accent_blue">#2563EB</color>
+    <color name="accent_cyan">#06B6D4</color>
+
+    <!-- Text colors -->
+    <color name="text_primary">#172033</color>
+    <color name="text_secondary">#64748B</color>
+    <color name="text_hint">#94A3B8</color>
+    <color name="text_on_primary">#FFFFFF</color>
+
+    <!-- Market status -->
+    <color name="positive_green">#16A34A</color>
+    <color name="negative_red">#DC2626</color>
+    <color name="neutral_gray">#94A3B8</color>
+
+    <!-- Borders and dividers -->
+    <color name="divider_color">#E2E8F0</color>
+    <color name="border_color">#E2E8F0</color>
+
+    <!-- Navigation -->
+    <color name="nav_background">#FFFFFF</color>
+    <color name="bottom_nav_color">#94A3B8</color>
+    <color name="bottom_nav_selected">#2563EB</color>
+
+    <!-- Supporting surfaces -->
+    <color name="surface_blue">#EFF6FF</color>
+    <color name="surface_green">#F0FDF4</color>
+    <color name="surface_red">#FEF2F2</color>
+
 </resources>

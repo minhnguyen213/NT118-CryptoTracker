@@ -1,58 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="140dp"
+    android:layout_width="148dp"
     android:layout_height="wrap_content"
     android:layout_marginEnd="12dp"
     android:layout_marginVertical="8dp"
-    app:cardBackgroundColor="#FFFFFF"
-    app:cardCornerRadius="16dp"
-    app:cardElevation="2dp">
+    app:cardBackgroundColor="@color/bg_card"
+    app:cardCornerRadius="18dp"
+    app:cardElevation="2dp"
+    app:cardUseCompatPadding="false">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
         android:orientation="vertical"
+        android:gravity="center"
         android:padding="16dp">
 
+        <!-- Coin Logo -->
         <ImageView
             android:id="@+id/ivTrendingLogo"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:background="#F5F5F5"
-            android:padding="4dp" />
+            android:background="@drawable/bg_coin_logo"
+            android:padding="7dp"
+            android:scaleType="fitCenter" />
 
+        <!-- Coin Symbol -->
         <TextView
             android:id="@+id/tvTrendingSymbol"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
+            android:gravity="center"
+            android:maxLines="1"
+            android:ellipsize="end"
             android:text="BTC"
-            android:textColor="#1E1E1E"
+            android:textColor="@color/text_primary"
             android:textSize="16sp"
             android:textStyle="bold" />
 
+        <!-- Coin Price -->
         <TextView
             android:id="@+id/tvTrendingPrice"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="6dp"
+            android:gravity="center"
+            android:maxLines="1"
+            android:ellipsize="end"
             android:text="$64,000"
-            android:textColor="#757575"
+            android:textColor="@color/text_secondary"
             android:textSize="13sp" />
 
+        <!-- Price Change -->
         <TextView
             android:id="@+id/tvTrendingChange"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="6dp"
-            android:background="#E8F5E9"
-            android:paddingHorizontal="8dp"
-            android:paddingVertical="4dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_trending_change"
+            android:gravity="center"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="5dp"
             android:text="+2.45%"
-            android:textColor="#4CAF50"
+            android:textColor="@color/positive_green"
             android:textSize="12sp"
             android:textStyle="bold" />
+
     </LinearLayout>
+
 </androidx.cardview.widget.CardView>
